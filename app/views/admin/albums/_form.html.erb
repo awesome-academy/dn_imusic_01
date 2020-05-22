@@ -1,0 +1,13 @@
+<%= form_for [:admin, album] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :song_id %><br>
+  <%= f.select :song_ids,
+                load_all_song,
+                {include_blank: false},
+                {multiple: true, class: "js-example-basic-multiple"}
+  %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

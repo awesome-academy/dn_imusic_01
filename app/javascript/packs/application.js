@@ -17,3 +17,10 @@ import "./src/custom.scss";
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import $ from "jquery"
+import "select2/dist/css/select2.css"
+import "select2"
+
+window.addEventListener("turbolinks:load", () => {
+  $('.js-example-basic-multiple').select2()
+})
